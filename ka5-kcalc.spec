@@ -1,14 +1,14 @@
-%define		kdeappsver	18.12.0
+%define		kdeappsver	18.12.1
 %define		qtver		5.9.0
 %define		kaname		kcalc
 Summary:	Kcalc
 Name:		ka5-%{kaname}
-Version:	18.12.0
+Version:	18.12.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	0695d02d462422609cecbf87b2fd9de8
+# Source0-md5:	c44713802db9e9af61b1f6dabfc22c87
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -25,6 +25,7 @@ BuildRequires:	kf5-ki18n-devel >= 5.46.0
 BuildRequires:	kf5-kinit-devel >= 5.46.0
 BuildRequires:	kf5-knotifications-devel >= 5.46.0
 BuildRequires:	kf5-kxmlgui-devel >= 5.46.0
+BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -45,14 +46,14 @@ functions, logic operations, and statistical calculations.
 install -d build
 cd build
 %cmake \
+	-G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kaname} --all-name --with-kde
 
