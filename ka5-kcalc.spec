@@ -41,6 +41,13 @@ than meet the eye on a first glance.. Features. The usual
 functionality offered by most scientific calculators; Trigonometric
 functions, logic operations, and statistical calculations.
 
+%description -l pl.UTF-8
+KCalc jest kalkulatorem, które oferuje wiele więcej funkcji
+matematycznych niż widać na pierwszy rzut oka.
+Właściwości: zwyczajna funkcjonalność oferowana przez większość
+kalkulatorów naukowych; funkcje trygonometryczne, operacje logiczne,
+obliczania statystyczne.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
