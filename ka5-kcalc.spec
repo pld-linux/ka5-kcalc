@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.3
+%define		kdeappsver	21.12.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kcalc
 Summary:	Kcalc
 Name:		ka5-%{kaname}
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	3446d0f86dec80721e1dc1937dcd5115
+# Source0-md5:	2810f79160f8de56e6fcf9a9a33247d4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -76,6 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kcalc
 %{_desktopdir}/org.kde.kcalc.desktop
 %{_datadir}/config.kcfg/kcalc.kcfg
-%{_datadir}/kcalc
 %{_datadir}/kconf_update/kcalcrc.upd
 %{_datadir}/metainfo/org.kde.kcalc.appdata.xml
