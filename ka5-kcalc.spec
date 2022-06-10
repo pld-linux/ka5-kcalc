@@ -30,6 +30,7 @@ BuildRequires:	kf5-ki18n-devel >= %{kframever}
 BuildRequires:	kf5-kinit-devel >= %{kframever}
 BuildRequires:	kf5-knotifications-devel >= %{kframever}
 BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
+BuildRequires:	mpfr-devel
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
