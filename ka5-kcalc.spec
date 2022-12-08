@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.3
+%define		kdeappsver	22.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kcalc
 Summary:	Kcalc
 Name:		ka5-%{kaname}
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	578d4b2f8b0de4fb1b2a41df37426609
+# Source0-md5:	db948a6ac8b82bee13542ec4ba3f738b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -25,6 +25,7 @@ BuildRequires:	kf5-kconfig-devel >= %{kframever}
 BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
 BuildRequires:	kf5-kcrash-devel >= %{kframever}
 BuildRequires:	kf5-kdoctools-devel >= %{kframever}
+BuildRequires:	kf5-kglobalaccel-devel >= %{kframever}
 BuildRequires:	kf5-kguiaddons-devel >= %{kframever}
 BuildRequires:	kf5-ki18n-devel >= %{kframever}
 BuildRequires:	kf5-kinit-devel >= %{kframever}
@@ -47,10 +48,10 @@ functions, logic operations, and statistical calculations.
 
 %description -l pl.UTF-8
 KCalc jest kalkulatorem, które oferuje wiele więcej funkcji
-matematycznych niż widać na pierwszy rzut oka.
-Właściwości: zwyczajna funkcjonalność oferowana przez większość
-kalkulatorów naukowych; funkcje trygonometryczne, operacje logiczne,
-obliczania statystyczne.
+matematycznych niż widać na pierwszy rzut oka. Właściwości:
+zwyczajna funkcjonalność oferowana przez większość kalkulatorów
+naukowych; funkcje trygonometryczne, operacje logiczne, obliczania
+statystyczne.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -88,3 +89,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/kcalc.kcfg
 %{_datadir}/kconf_update/kcalcrc.upd
 %{_datadir}/metainfo/org.kde.kcalc.appdata.xml
+%{_datadir}/kglobalaccel/org.kde.kcalc.desktop
